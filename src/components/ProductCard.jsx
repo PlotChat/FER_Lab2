@@ -4,7 +4,7 @@ import { FaCheck } from "react-icons/fa";
 
 const ProductCard = ({ p, handleAdd }) => {
 	return (
-		<Card style={{ width: "18rem" }}>
+		<Card style={{ width: "18rem", height: "30rem" }}>
 			<Card.Img className="object-fit-cover w-100" style={{height: "20rem"}} variant="top" src={p.image} />
 			<Card.Body>
 				<Card.Title>{p.name}</Card.Title>

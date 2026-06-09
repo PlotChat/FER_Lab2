@@ -15,7 +15,7 @@ export default function App() {
 			<Header cartValue={cartValue}></Header>
 			<main>
 				<Banner></Banner>
-				<div className="p-5">
+				<div className="px-5 pb-5 pt-5">
 					<ProductList buyBtnHandle={handleAddToCart}></ProductList>
 				</div>
         <Footer></Footer>

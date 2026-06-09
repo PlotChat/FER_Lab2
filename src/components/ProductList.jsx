@@ -63,9 +63,9 @@ const ProductList = ({ buyBtnHandle }) => {
     }
 
 	return (
-		<Row className="flex">
+		<Row className="d-flex" sm={4}>
 			{products.map((p) => (
-				<Col>
+				<Col className="d-flex justify-content-center mt-5 align-items-center">
 					<ProductCard p={p} handleAdd={handleAdd}></ProductCard>
 				</Col>
                 )
