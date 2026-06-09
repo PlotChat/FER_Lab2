@@ -1,12 +1,29 @@
+import { useState } from "react";
+import { Badge } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { FaCheck } from "react-icons/fa";
 
-const ProductCard = ({ p, handleAdd }) => {
+const ProductCard = ({ p, buyBtnHandle }) => {
+	const [add, setAdd] = useState(false);
+
+	const handleAdd = (p) => {
+		if (!p.added) {
+			console.log("ADSD");
+			buyBtnHandle();
+		}
+	};
+
 	return (
-		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="holder.js/100px180" />
+		<Card style={{ width: "18rem", height: "30rem" }}>
+			<Card.Img
+				className="object-fit-cover w-100"
+				style={{ height: "20rem" }}
+				variant="top"
+				src={p.image}
+			/>
 			<Card.Body>
-				<Card.Title>{p.name}</Card.Title>
+				<Card.Title>{p.name} <Badge bg="warning">New</Badge></Card.Title>
 				<Card.Text>
 					<div>
 						Price: <span>{p.price}</span>
@@ -15,8 +32,21 @@ const ProductCard = ({ p, handleAdd }) => {
 						Status: <span>{p.status}</span>
 					</div>
 				</Card.Text>
-				<Button variant="dark" onClick={() => handleAdd(p)} disabled={p.added}>
-					{!p.added ? <div>Add to Cart</div> : <div>Added to Cart</div>}
+				<Button
+					variant={!add ? "success" : "danger"}
+					onClick={() => {
+						handleAdd(p);
+						setAdd(true);
+					}}
+					disabled={add}
+				>
+					{!add ? (
+						<div>Add to Cart</div>
+					) : (
+						<div>
+							<FaCheck className="me-2"></FaCheck> Added to Cart
+						</div>
+					)}
 				</Button>
 			</Card.Body>
 		</Card>
