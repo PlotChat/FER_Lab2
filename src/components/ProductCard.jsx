@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Badge } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { FaCheck } from "react-icons/fa";
@@ -22,7 +23,7 @@ const ProductCard = ({ p, buyBtnHandle }) => {
 				src={p.image}
 			/>
 			<Card.Body>
-				<Card.Title>{p.name}</Card.Title>
+				<Card.Title>{p.name} <Badge bg="warning">New</Badge></Card.Title>
 				<Card.Text>
 					<div>
 						Price: <span>{p.price}</span>
