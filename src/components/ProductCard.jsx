@@ -1,10 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { FaCheck } from "react-icons/fa";
 
 const ProductCard = ({ p, handleAdd }) => {
 	return (
 		<Card style={{ width: "18rem" }}>
-			<Card.Img variant="top" src="holder.js/100px180" />
+			<Card.Img className="object-fit-cover w-100" style={{height: "20rem"}} variant="top" src={p.image} />
 			<Card.Body>
 				<Card.Title>{p.name}</Card.Title>
 				<Card.Text>
@@ -16,7 +17,7 @@ const ProductCard = ({ p, handleAdd }) => {
 					</div>
 				</Card.Text>
 				<Button variant="dark" onClick={() => handleAdd(p)} disabled={p.added}>
-					{!p.added ? <div>Add to Cart</div> : <div>Added to Cart</div>}
+					{!p.added ? <div>Add to Cart</div> : <div><FaCheck className="me-2"></FaCheck> Added to Cart</div>}
 				</Button>
 			</Card.Body>
 		</Card>
