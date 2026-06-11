@@ -15,10 +15,10 @@ const ProductCard = ({ p, buyBtnHandle }) => {
 	};
 
 	return (
-		<Card style={{ width: "18rem", height: "30rem" }}>
+		<Card style={{ height: "30rem", width: "100%" }}>
 			<Card.Img
 				className="object-fit-cover w-100"
-				style={{ height: "20rem" }}
+				style={{ height: "20rem", width: "100%" }}
 				variant="top"
 				src={p.image}
 			/>
